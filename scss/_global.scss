@@ -44,6 +44,9 @@ section {
     text-transform: none;
     @include serif-font;
   }
+  &.used-technologies img {
+    max-height: 128px;
+  }
 }
 @media(min-width:768px) {
   section {

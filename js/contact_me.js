@@ -5,6 +5,7 @@ $(function() {
     submitError: function($form, event, errors) {
       // additional error messages or events
     },
+    /*
     submitSuccess: function($form, event) {
       event.preventDefault(); // prevent default submit behaviour
       // get values from FORM
@@ -19,15 +20,32 @@ $(function() {
       }
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+      setTimeout(function() {
+        $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+        // Success message
+        $('#success').html("<div class='alert alert-success'>");
+        $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+          .append("</button>");
+        $('#success > .alert-success')
+          .append("<strong>Your message has been sent. </strong>");
+        $('#success > .alert-success')
+          .append('</div>');
+        //clear all fields
+        $('#contactForm').trigger("reset");
+      }, 500)
       $.ajax({
-        url: "././mail/contact_me.php",
+        // url: "././mail/contact_me.php",
+        url: "https://formspree.io/rowltech.io@gmail.com",
         type: "POST",
         data: {
           name: name,
           phone: phone,
           email: email,
-          message: message
+          _replyto:email,
+          message: message,
+          _subject:'My Form Submission',
         },
+        dataType: "json",
         cache: false,
         success: function() {
           // Success message
@@ -58,6 +76,7 @@ $(function() {
         }
       });
     },
+    */
     filter: function() {
       return $(this).is(":visible");
     },

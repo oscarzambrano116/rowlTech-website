@@ -47,4 +47,7 @@
     $('.navbar').removeClass('d-none');
   })
 
+  // contact form
+  $("#contactForm").attr('action', 'https://formspree.io/' + 'rowltech.io' + '@' + 'gmail' + '.' + 'com');
+
 })(jQuery); // End of use strict

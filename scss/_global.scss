@@ -47,10 +47,13 @@ section {
   &.used-technologies img {
     max-height: 128px;
   }
+  .text-muted-contact {
+    color: white !important;
+  }
 }
 @media(min-width:768px) {
   section {
-    padding: 150px 0;
+    padding: 100px 0;
   }
 }
 

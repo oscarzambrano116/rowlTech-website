@@ -47,6 +47,9 @@
     $('.navbar').removeClass('d-none');
   })
 
+  // Activate tooltips
+  $('[data-toggle="tooltip"]').tooltip();
+
   // contact form
   $("#contactForm").attr('action', 'https://formspree.io/' + 'rowltech.io' + '@' + 'gmail' + '.' + 'com');
 
